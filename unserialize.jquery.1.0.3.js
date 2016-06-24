@@ -70,6 +70,9 @@ jQuery.fn.unserialize = function(parm){
 		
 		
 		for (var i in items){
+			if (items[i] === null) {
+		            items[i] = "";
+		        }
 			var parts = (items instanceof Array) ? items[i].split(/=/) : [i, (items[i] instanceof Array) ? items[i] : "" + items[i]];
 			parts[0] = decodeURIComponent(parts[0]);
 			if (parts[0].indexOf("[]") == -1 && parts[1] instanceof Array){
