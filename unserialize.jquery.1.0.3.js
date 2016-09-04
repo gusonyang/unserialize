@@ -117,7 +117,7 @@ jQuery.fn.unserialize = function(parm){
 				//when the value is an object, we set the value to ""
 				val = (typeof val == "object") ? "" : val;
 				
-				obj.val(decodeURIComponent(val.replace(/\+/g," ")));
+				obj.val(val);
 			}
 		};
 		return this;
